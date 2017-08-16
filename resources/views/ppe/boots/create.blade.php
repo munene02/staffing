@@ -1,0 +1,33 @@
+@extends('layout')
+
+@section('content')
+<a href="/boots" class="btn bg-purple">GO BACK</a> 
+	<h1>Stock Management - Boots - Add NEW Stock Item</h1>
+	<p>Fill and submit the form below to add a NEW Stock Item </p>
+	
+		<div class="box box-primary">
+			<div class="box-header with-border">
+				<H3 class="box-title">{{ $brands->brand }} Boots</H3>
+			</div>
+			<div class="box-body">
+			<form action="/boots" method="POST" role="form" class="col-md-6">
+					{!! csrf_field() !!}
+					@if(count($errors) > 0)
+				        		<div class="alert alert-danger">
+				        			<ul>
+				        				@foreach($errors->all() as $error)
+				        				<li>{{ $error }}</li>
+				        				@endforeach
+				        			</ul>
+				        		</div>
+				    @endif
+					
+					@include('ppe.boots.form')
+			        	
+				</form>	
+				<!--{{ var_dump($errors) }}-->
+			</div>	
+		</div>
+	
+@stop
+

@@ -1,0 +1,47 @@
+@extends('layout')
+
+@section('content')
+<a href="/requisitions" class="btn bg-purple">GO BACK</a> 
+	<h1>PPE Requisitions - {{ucfirst($id)}}<a href="/requisitions/form" class="btn bg-orange pull-right">View Requisition Form</a></h1>
+	<p>To ADD an item to the requisition form ENTER then quantity needed the click the ADD button.</p>
+	@if($id == 'aprons')
+		@include('ppe.requisitions.aprons')
+	@elseif($id == 'blouses')
+		@include('ppe.requisitions.blouses')
+	@elseif($id == 'boots')
+		@include('ppe.requisitions.boots')
+	@elseif($id == 'caps')
+		@include('ppe.requisitions.caps')
+	@elseif($id == 'chinstraps')
+		@include('ppe.requisitions.chinstraps')
+	@elseif($id == 'dustcoats')
+		@include('ppe.requisitions.dustcoats')
+	@elseif($id == 'ear_plugs')
+		@include('ppe.requisitions.ear_plugs')
+	@elseif($id == 'gloves')
+		@include('ppe.requisitions.gloves')
+	@elseif($id == 'helmets')
+		@include('ppe.requisitions.helmets')
+	@elseif($id == 'masks')
+		@include('ppe.requisitions.masks')
+	@elseif($id == 'overalls')
+		@include('ppe.requisitions.overalls')
+	@elseif($id == 'raincoats')
+		@include('ppe.requisitions.raincoats')
+	@elseif($id == 'reflector_jackets')
+		@include('ppe.requisitions.reflector_jackets')	
+	@elseif($id == 'reflector_rolls')
+		@include('ppe.requisitions.reflector_rolls')
+	@elseif($id == 'safety_goggles')
+		@include('ppe.requisitions.safety_goggles')
+	@elseif($id == 'shirts')
+		@include('ppe.requisitions.shirts')
+	@elseif($id == 'sweater')
+		@include('ppe.requisitions.sweater')
+	@elseif($id == 'trousers')
+		@include('ppe.requisitions.trousers')
+	@else
+		@include('ppe.requisitions.tshirts')
+	@endif
+
+@stop
